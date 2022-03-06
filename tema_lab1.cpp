@@ -34,3 +34,25 @@ void merge (int v[], int s, int m, int d)
     for(int p=s; p<=d; p++)
         v[p]=a[p];
 }
+void merge_sort (int v[], int s, int d)
+{
+    if (s<d)
+    {
+        int m = (s + d) / 2;
+        merge_sort(v, s, m);
+        merge_sort(v,m+1,d);
+        merge(v,s,m,d);
+
+    }
+
+}
+int main() {
+    int n, v[100];
+    cin>>n;
+    for(int i=0; i<=n; i++)
+    cin>>v[i];
+    merge_sort(v,0, n-1);
+    for (int i = 0; i <= n-1; i++)
+        cout << v[i] <<" ";
+    return 0;
+}
