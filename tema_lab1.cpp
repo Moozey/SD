@@ -42,15 +42,15 @@ void merge_sort (int v[], int s, int d)
         merge_sort(v, s, m);
         merge_sort(v,m+1,d);
         merge(v,s,m,d);
-
     }
-
 }
 int main() {
     int n, v[100];
+    cout<<"n=";
     cin>>n;
-    for(int i=0; i<=n; i++)
-    cin>>v[i];
+    cout<<"citire vector: ";
+    for(int i=0; i<=n-1; i++)
+        cin>>v[i];
     merge_sort(v,0, n-1);
     for (int i = 0; i <= n-1; i++)
         cout << v[i] <<" ";
